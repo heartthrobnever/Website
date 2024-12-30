@@ -1,10 +1,10 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const bios = document.querySelectorAll('.bio h3');
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+  bios.forEach(bio => {
+    bio.addEventListener('click', () => {
+      const parent = bio.parentElement;
+      parent.classList.toggle('expanded');
     });
+  });
 });
